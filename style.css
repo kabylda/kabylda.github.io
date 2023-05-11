@@ -28,6 +28,7 @@ header {
 }
 
 .nav-center {
+  font-size: 1.7em;
   flex: 1;
   text-align: center;
 }
