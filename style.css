@@ -23,6 +23,7 @@ header {
 .nav-left {
   color: #484848;
   text-align: center;
+  margin-left: 5px;
 }
 
 .nav-center {
