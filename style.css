@@ -100,6 +100,10 @@ footer img {
   margin: 0px;
 }
 
+li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
 .bounded{
   width: 380px;
 }
