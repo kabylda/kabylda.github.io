@@ -18,12 +18,12 @@ header {
   align-items: center;
   padding: 10px;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .nav-left {
   color: #484848;
   text-align: center;
-  margin-left: 20px;
 }
 
 .nav-center {
