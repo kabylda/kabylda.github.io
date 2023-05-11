@@ -51,7 +51,7 @@ nav ul li {
 nav ul li:not(:first-child):before {
     padding: 1em;
     margin: 0px;
-    content: "|";
+    content: "  ";
 }
 
 nav ul li a {
