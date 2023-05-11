@@ -20,6 +20,7 @@ header {
 
 .nav-left a {
   font-size: 2em;
+  margin-left: 5px;
 }
 
 .nav-center {
