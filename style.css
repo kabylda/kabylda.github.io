@@ -22,12 +22,10 @@ header {
 
 .nav-left {
   color: #484848;
-  flex: 1;
   text-align: center;
 }
 
 .nav-center {
-  flex: 1;
   text-align: center;
 }
 
