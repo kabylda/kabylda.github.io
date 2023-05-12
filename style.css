@@ -49,6 +49,7 @@ a {
 a:hover {
   color: #c96464;
   text-decoration: underline;
+  transition: color 0.2s ease-in-out;
 }
 
 nav ul {
@@ -74,6 +75,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+  text-decoration: none;
   color: #B22222;
 }
 
