@@ -46,6 +46,11 @@ a {
   color: #B22222;
 }
 
+a:hover {
+  color: #c96464;
+  text-decoration: underline;
+}
+
 nav ul {
   text-align: center;
 }
