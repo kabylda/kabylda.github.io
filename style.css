@@ -47,7 +47,7 @@ a {
 }
 
 a:hover {
-  color: #c96464;
+  color: #8e1b1b;
   text-decoration: underline;
   transition: color 0.2s ease-in-out;
 }
