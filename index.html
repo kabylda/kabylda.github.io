@@ -55,9 +55,9 @@
         }
         nav ul {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             justify-content: center;
-            gap: 1em;
+            gap: 0.5em;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -72,10 +72,17 @@
         .tab-button {
             background: none;
             border: none;
-            padding: 8px;
+            padding: 4px 6px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 0.9em;
             color: var(--text-color);
+            white-space: nowrap;
+        }
+        @media (min-width: 768px) {
+            .tab-button {
+                padding: 8px;
+                font-size: 1em;
+            }
         }
         .tab-button.active {
             border-bottom: 2px solid var(--link-color);
@@ -146,16 +153,24 @@
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 1.2em;
-            padding: 5px;
+            font-size: 1em;
+            padding: 4px;
             color: var(--text-color);
+            white-space: nowrap;
+        }
+        @media (min-width: 768px) {
+            .theme-toggle {
+                font-size: 1.2em;
+                padding: 5px;
+            }
         }
         nav {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             justify-content: center;
             gap: 0.5em;
             padding: 0.5em;
+            overflow-x: auto;
         }
         ul {
             padding-left: 20px;
