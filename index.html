@@ -3,8 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Set theme before first paint to avoid a flash of the wrong theme
+        (function () {
+            var saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <title>Adil Kabylda</title>
+    <meta name="description" content="Adil Kabylda — postdoctoral researcher in Theoretical Chemical Physics at the University of Luxembourg, developing machine learning force fields for (bio)molecular simulations.">
 	<link rel="icon" type="image/svg" href="media/logo_red.svg">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Adil Kabylda">
+    <meta property="og:description" content="Postdoctoral researcher in Theoretical Chemical Physics at the University of Luxembourg, developing machine learning force fields for (bio)molecular simulations.">
+    <meta property="og:image" content="https://kabylda.github.io/media/photo.jpeg">
+    <meta property="og:url" content="https://kabylda.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Adil Kabylda">
+    <meta name="twitter:description" content="Postdoctoral researcher in Theoretical Chemical Physics at the University of Luxembourg, developing machine learning force fields for (bio)molecular simulations.">
+    <meta name="twitter:image" content="https://kabylda.github.io/media/photo.jpeg">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Adil Kabylda",
+      "url": "https://kabylda.github.io/",
+      "image": "https://kabylda.github.io/media/photo.jpeg",
+      "jobTitle": "Postdoctoral Researcher",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "University of Luxembourg"
+      },
+      "alumniOf": ["University of Luxembourg", "Moscow State University"],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=BIi43qMAAAAJ",
+        "https://orcid.org/0000-0002-8620-6135",
+        "https://x.com/kabylda_",
+        "https://bsky.app/profile/kabylda.bsky.social",
+        "https://www.linkedin.com/in/kabylda/"
+      ]
+    }
+    </script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KMZT3VV1C0"></script>
     <script>
@@ -48,6 +95,30 @@
         h2 {
             font-size: 1.2em;
             font-weight: bold;
+        }
+        h3 {
+            font-size: 1.05em;
+            font-weight: bold;
+            margin: 1.4em 0 0.3em 0;
+        }
+        .pub-list li {
+            margin: 12px 0;
+            padding-left: 4px;
+        }
+        .news-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px 0;
+            font-size: 0.95em;
+            color: var(--link-color);
+        }
+        .news-toggle:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+        .news-item.hidden {
+            display: none;
         }
         header {
             text-align: center;
@@ -229,6 +300,7 @@
             <b>03/2026</b> - I gave an invited talk in the Physics Department at <a href="https://www.phys.tsinghua.edu.cn/info/1063/6724.htm" target="_blank">Tsinghua University</a> in Beijing <br>
             <b>03/2026</b> - Our work on <a href="https://iopscience.iop.org/article/10.1088/3050-287X/ae5267" target="_blank">QCell</a> is published in <em>AI Sci.</em> <br>
             <b>02/2026</b> - Our work on <a href="https://doi.org/10.48550/arXiv.2602.22086" target="_blank">MBD-ML</a> is out on <em>arXiv</em> <br>
+            <span id="older-news" class="news-item hidden">
             <b>01/2026</b> - I defended my thesis! <br>
             <b>11/2025</b> - Our perspective on the state of MLFFs is published in the <a href="https://arxiv.org/abs/2511.20976" target="_blank"> AI4X Roadmap </a> <br> 
             <b>11/2025</b> - I gave an invited talk at KU Leuven's Quantum & Physical Chemistry Division Seminar <br> 
@@ -256,6 +328,8 @@
 			<b>07/2023</b> - I will be traveling to Los Angeles in December for an <a href="http://www.ipam.ucla.edu/qmm2022" target="_blank">IPAM reunion conference</a> <br>
 			<b>06/2023</b> - Our paper on <a href="https://www.nature.com/articles/s41467-023-39214-w" target="_blank">Efficient interatomic descriptors for MLFFs of extended molecules</a> is now published in <em>Nat. Commun.</em> <br>
 			<b>05/2023</b> - New website is up! <br>
+            </span>
+            <button class="news-toggle" id="news-toggle-btn" onclick="toggleNews()">Show older news ▾</button>
         </div>
     </div>
 
@@ -285,6 +359,7 @@
         <ul>
         <li>2026, <a href="https://research.google/programs-and-events/google-academic-research-awards/" target="_blank">Google Academic Research Award</a></li>
         <li>2026, Delegate at the 56th <a href="https://achievement.org/summit/" target="_blank">International Achievement Summit</a></li>
+        <li>2026, <a href="https://forbes.kz/articles/forbes-kazakhstan-predstavlyaet-reyting-30-do-30-e11bed" target="_blank">Forbes Kazakhstan 30 Under 30</a>, Science category</li>
         <li>2024, Wiley-VCH Best Poster Award at the <a href="https://ccsc2024.github.io/" target="_blank">Chemical Compound Space Conference</a></li>
         <li>2022, Lindau Fellow at the <a href="https://www.lindau-nobel.org/71st-lindau-nobel-laureate-meeting-2022/" target="_blank">71st Lindau Nobel Laureate Meeting</a> 
             dedicated to Chemistry <a href="https://www.fnr.lu/research-with-impact-fnr-highlight/lindau-adil-kabylda/" target="_blank">(interview)</a></li>
@@ -327,61 +402,108 @@
     <div id="publications" class="tab-content">
 
 		<h2>Publications</h2>
-		See updated list on <a href="https://scholar.google.ru/citations?user=BIi43qMAAAAJ" target="_blank">Google Scholar</a>. <br>
-		* indicates equal contribution.  
-		
-		<p>
-			<ul>
-				
-			<li style="margin:10px 0px">
-				<em><a href="https://www.nature.com/articles/s41467-023-39214-w" target="_blank">Efficient Interatomic Descriptors for Accurate Machine Learning Force Fields of Extended Molecules</a></em><br>
-				<b>A. Kabylda*</b>, V. Vassilev-Galindo*, S. Chmiela, I. Poltavsky, A. Tkatchenko <br>
-				<em>Nature Communications</em> <b>2023</b>, 14, 3562 <br>
-		
-				
-			<li style="margin:10px 0px">
-				<em><a href="https://doi.org/10.1126/sciadv.adf0873" target="_blank">Accurate Global Machine Learning Force Fields for Molecules with Hundreds of Atoms</a></em><br>
-				S. Chmiela, V. Vassilev-Galindo, O.T. Unke,  <b>A. Kabylda</b>, H.E. Sauceda, A. Tkatchenko, K.-R. Muller  <br>
-				<em>Science Advances</em> <b>2023</b>, 9, 2, eadf0873 <br>
-	
-				
-			<li style="margin:10px 0px">
+		18 publications (incl. 8 as first author); &gt;670 citations on
+		<a href="https://scholar.google.com/citations?user=BIi43qMAAAAJ" target="_blank">Google Scholar</a>, h-index &ge;11.
+
+		<h3>(Co-)First Author</h3>
+		<ol class="pub-list">
+
+			<li>
+				<em><a href="https://arxiv.org/abs/2605.28960" target="_blank">How Atoms Interact Within Molecules</a></em><br>
+				<b>A. Kabylda</b>, M. Esders, M. Gori, S. Chmiela, K.-R. Müller, A. Tkatchenko <br>
+				<em>arXiv</em> <b>2026</b>, 2605.28960
+
+			<li>
+				<em><a href="https://doi.org/10.1088/3050-287X/ae5267" target="_blank">QCell: Comprehensive Quantum-Mechanical Dataset Spanning Diverse Biomolecular Fragments</a></em><br>
+				<b>A. Kabylda</b>, S. Suárez-Dou, N. Davoine, F.N. Brünig, A. Tkatchenko <br>
+				<em>AI Sci.</em> <b>2026</b>, 2, 025003
+
+			<li>
+				<em><a href="https://orbilu.uni.lu/handle/10993/67501" target="_blank">General-Purpose Machine Learning Force Fields for (Bio)Molecular Simulations</a></em><br>
+				<b>A. Kabylda</b> <br>
+				<em>University of Luxembourg</em> <b>2026</b>, PhD Thesis
+
+			<li>
+				<em><a href="https://doi.org/10.1021/jacs.5c09558" target="_blank">Molecular Simulations with a Pretrained Neural Network and Universal Pairwise Force Fields</a></em><br>
+				<b>A. Kabylda</b>, J.T. Frank, S. Suárez-Dou, A. Khabibrakhmanov, L. Medrano Sandonas, O.T. Unke, S. Chmiela, K.-R. Müller, A. Tkatchenko <br>
+				<em>J. Am. Chem. Soc.</em> <b>2025</b>, 147, 37, 33723 &mdash; <b><a href="https://pubs.acs.org/cms/10.1021/jacsat.2025.147.issue-37/asset/jacsat.2025.147.issue-37.xlargecover-5.jpg" target="_blank">Cover article</a></b>
+
+			<li>
+				<em><a href="https://doi.org/10.1002/adfm.202417891" target="_blank">Mechanical Properties of Nanoporous Graphenes: Transferability of Graph Machine-Learned Force Fields Compared to Local and Reactive Potentials</a></em><br>
+				<b>A. Kabylda</b>, B. Mortazavi, X. Zhuang, A. Tkatchenko <br>
+				<em>Adv. Funct. Mater.</em> <b>2025</b>, 35, 2417891
+
+			<li>
+				<em><a href="https://doi.org/10.1038/s41467-023-39214-w" target="_blank">Efficient Interatomic Descriptors for Accurate Machine Learning Force Fields of Extended Molecules</a></em><br>
+				<b>A. Kabylda</b>, V. Vassilev-Galindo, S. Chmiela, I. Poltavsky, A. Tkatchenko <br>
+				<em>Nat. Commun.</em> <b>2023</b>, 14, 3562
+
+			<li>
 				<em><a href="https://doi.org/10.1021/jacs.1c10752" target="_blank">Light Driven Ultrafast Bioinspired Molecular Motors: Steering and Accelerating Photoisomerization Dynamics of Retinal</a></em><br>
-				E. Gruber*, <b>A.M. Kabylda*</b>, M.B. Nielsen, A.P. Rasmussen, R. Teiwes, P.A. Kusochek, A.V. Bochenkova, L.H. Andersen <br>
-				<em>Journal of the American Chemical Society</em> <b>2022</b>, 144, 1, 69–73 <br>
-	
-			<li style="margin:10px 0px">
-				<em><a href="https://doi.org/10.1002/cphc.202100068" target="_blank">Controlling light‐induced proton transfer from the GFP chromophore</a></em><br>
-				J. Langeland, N.W. Persen, E. Gruber, H.V. Kiefer, <b>A.M. Kabylda</b>, A.V. Bochenkova, L.H. Andersen <br>
-				<em>ChemPhysChem</em> <b>2021</b>, 22 (9), 807-807 <br>
-				<b, style="color:rgb(45, 45, 182)"><a href="https://doi.org/10.1002/cphc.202100281" target="_blank">Selected as cover article</a></b><br>
-						
-			<li style="margin:10px 0px">
+				E. Gruber, <b>A.M. Kabylda</b>, M.B. Nielsen, A.P. Rasmussen, R. Teiwes, P.A. Kusochek, A.V. Bochenkova, L.H. Andersen <br>
+				<em>J. Am. Chem. Soc.</em> <b>2022</b>, 144, 1, 69
+
+			<li>
 				<em><a href="https://doi.org/10.3389/fmolb.2020.00176" target="_blank">A General Mechanism of Green-to-Red Photoconversions of GFP</a></em><br>
-				D.A. Gorbachev*, E.F. Petrusevich*, <b>A.M. Kabylda*</b>, E.G. Maksimov, 
-				K.A. Lukyanov, A.M. Bogdanov, M.S. Baranov, A.V. Bochenkova, A.S. Mishin <br>
-				<em>Frontiers in Molecular Biosciences</em> <b>2020</b>, 7, 176 <br>
-				
-			<li style="margin:10px 0px">
+				D.A. Gorbachev, E.F. Petrusevich, <b>A.M. Kabylda</b>, E.G. Maksimov, K.A. Lukyanov, A.M. Bogdanov, M.S. Baranov, A.V. Bochenkova, A.S. Mishin <br>
+				<em>Front. Mol. Biosci.</em> <b>2020</b>, 7, 176
+
+		</ol>
+
+		<h3>Contributing Author</h3>
+		<ol class="pub-list" start="9">
+
+			<li>
+				<em><a href="https://doi.org/10.48550/arXiv.2602.22086" target="_blank">MBD-ML: Many-Body Dispersion from Machine Learning for Molecules and Materials</a></em><br>
+				E. Moerman, <b>A. Kabylda</b>, A. Khabibrakhmanov, A. Tkatchenko <br>
+				<em>arXiv</em> <b>2026</b>, 2602.22086
+
+			<li>
+				<em><a href="https://doi.org/10.48550/arXiv.2511.20976" target="_blank">AI4X Roadmap: Artificial Intelligence for the Advancement of Scientific Pursuit and Its Future Directions</a></em><br>
+				S.G. Dale, N. Kazeev, A.J.A. Price, &hellip;, <b>A. Kabylda</b>, I. Poltavsky, A. Tkatchenko, &hellip;, J.-H. Garcia <br>
+				<em>arXiv</em> <b>2025</b>, 2511.20976
+
+			<li>
+				<em><a href="https://doi.org/10.1021/acs.jctc.4c01424" target="_blank">Analyzing Atomic Interactions in Molecules as Learned by Neural Networks</a></em><br>
+				M. Esders, T. Schnake, J. Lederer, <b>A. Kabylda</b>, G. Montavon, A. Tkatchenko, K.-R. Müller <br>
+				<em>J. Chem. Theory Comput.</em> <b>2025</b>, 21, 2, 714
+
+			<li>
+				<em><a href="https://doi.org/10.1039/D4SC06530A" target="_blank">Crash Testing Machine Learning Force Fields for Molecules, Materials, and Interfaces: Molecular Dynamics in the TEA Challenge 2023</a></em><br>
+				I. Poltavsky, M. Puleva, A. Charkin-Gorbulin, G. Fonseca, I. Batatia, N.J. Browning, S. Chmiela, M. Cui, J.T. Frank, S. Heinen, B. Huang, S. Käser, <b>A. Kabylda</b>, D. Khan, C. Müller, A.J.A. Price, K. Riedmiller, K. Töpfer, T.W. Ko, M. Meuwly, M. Rupp, G. Csányi, O.A. von Lilienfeld, J.T. Margraf, K.-R. Müller, A. Tkatchenko <br>
+				<em>Chem. Sci.</em> <b>2025</b>, 16, 3738
+
+			<li>
+				<em><a href="https://doi.org/10.1039/D4SC06529H" target="_blank">Crash Testing Machine Learning Force Fields for Molecules, Materials, and Interfaces: Model Analysis in the TEA Challenge 2023</a></em><br>
+				I. Poltavsky, M. Puleva, A. Charkin-Gorbulin, G. Fonseca, I. Batatia, N.J. Browning, S. Chmiela, M. Cui, J.T. Frank, S. Heinen, B. Huang, S. Käser, <b>A. Kabylda</b>, D. Khan, C. Müller, A.J.A. Price, K. Riedmiller, K. Töpfer, T.W. Ko, M. Meuwly, M. Rupp, G. Csányi, O.A. von Lilienfeld, J.T. Margraf, K.-R. Müller, A. Tkatchenko <br>
+				<em>Chem. Sci.</em> <b>2025</b>, 16, 3720
+
+			<li>
+				<em><a href="https://doi.org/10.1126/sciadv.adf0873" target="_blank">Accurate Global Machine Learning Force Fields for Molecules with Hundreds of Atoms</a></em><br>
+				S. Chmiela, V. Vassilev-Galindo, O.T. Unke, <b>A. Kabylda</b>, H.E. Sauceda, A. Tkatchenko, K.-R. Müller <br>
+				<em>Sci. Adv.</em> <b>2023</b>, 9, eadf0873
+
+			<li>
+				<em><a href="https://doi.org/10.1002/cphc.202100068" target="_blank">Controlling Light-Induced Proton Transfer from the GFP Chromophore</a></em><br>
+				J. Langeland, N.W. Persen, E. Gruber, H.V. Kiefer, <b>A.M. Kabylda</b>, A.V. Bochenkova, L.H. Andersen <br>
+				<em>ChemPhysChem</em> <b>2021</b>, 22, 9, 833 &mdash; <b><a href="https://doi.org/10.1002/cphc.202100282" target="_blank">Cover article</a></b>
+
+			<li>
 				<em><a href="https://doi.org/10.1021/acscatal.9b04862" target="_blank">Bisguanidinium-Catalyzed Epoxidation of Allylic and Homoallylic Amines under Phase Transfer Conditions</a></em><br>
 				K.F. Chin, X. Ye, Y. Li, R. Lee, <b>A.M. Kabylda</b>, D. Leow, X. Zhang, E.C.X. Ang, C.-H. Tan <br>
-				<em>ACS Catalysis</em> <b>2020</b>, 10, 4, 2684–2691 <br>
-				<b, style="color:rgb(45, 45, 182)"><a href="https://pubs.acs.org/toc/accacs/10/4" target="_blank">Selected as cover article</a></b><br>
-				
+				<em>ACS Catal.</em> <b>2020</b>, 10, 4, 2684 &mdash; <b><a href="https://pubs.acs.org/toc/accacs/10/4" target="_blank">Cover article</a></b>
 
-			<li style="margin:10px 0px">
-				<em><a href="https://doi.org/10.1002/ejoc.201800992" target="_blank">Efficient synthesis of the peptide fragment of the natural depsipeptides Jaspamide and Chondramide</a></em><br>
+			<li>
+				<em><a href="https://doi.org/10.1002/ejoc.201800992" target="_blank">Efficient Synthesis of the Peptide Fragment of the Natural Depsipeptides Jaspamide and Chondramide</a></em><br>
 				D.P. Zarezin, O.I. Shmatova, <b>A.M. Kabylda</b>, V.G. Nenajdenko <br>
-				<em>European Journal of Organic Chemistry</em> <b>2018</b> (34), 4716–4722<br>
-	
-			<li style="margin:10px 0px">
-				<em><a href="https://doi.org/10.1016/j.tet.2018.06.045" target="_blank">Efficient synthesis of tetrazole derivatives of cytisine using the azido-Ugi reaction</a></em><br>
+				<em>Eur. J. Org. Chem.</em> <b>2018</b>, 34, 4716
+
+			<li>
+				<em><a href="https://doi.org/10.1016/j.tet.2018.06.045" target="_blank">Efficient Synthesis of Tetrazole Derivatives of Cytisine Using the Azido-Ugi Reaction</a></em><br>
 				D.P. Zarezin, <b>A.M. Kabylda</b>, V.I. Vinogradova, P.V. Dorovatovskii, V.N. Khrustalev, V.G. Nenajdenko <br>
-				<em>Tetrahedron</em> <b>2018</b>, 74 (32), 4315-4322<br>
+				<em>Tetrahedron</em> <b>2018</b>, 74, 32, 4315
 
-	
-
-			</ul>
+		</ol>
 
         <!-- <h2>Conferences</h2>
 
@@ -447,19 +569,19 @@
 
     <footer>
         <ul>
-            <a href="https://scholar.google.ru/citations?user=BIi43qMAAAAJ" target="_blank">
+            <a href="https://scholar.google.com/citations?user=BIi43qMAAAAJ" target="_blank" aria-label="Google Scholar">
                 <i class="fa-brands fa-google-scholar social-icon"></i>
             </a>
-            <a href="https://orcid.org/0000-0002-8620-6135" target="_blank">
+            <a href="https://orcid.org/0000-0002-8620-6135" target="_blank" aria-label="ORCID">
                 <i class="fa-brands fa-orcid social-icon"></i>
             </a>
-            <a href="https://x.com/kabylda_" target="_blank">
+            <a href="https://x.com/kabylda_" target="_blank" aria-label="X (Twitter)">
                 <i class="fa-brands fa-x-twitter social-icon"></i>
             </a>
-            <a href="https://bsky.app/profile/kabylda.bsky.social" target="_blank">
+            <a href="https://bsky.app/profile/kabylda.bsky.social" target="_blank" aria-label="Bluesky">
                 <i class="fa-brands fa-bluesky social-icon"></i>
             </a>
-            <a href="https://www.linkedin.com/in/kabylda/" target="_blank">
+            <a href="https://www.linkedin.com/in/kabylda/" target="_blank" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in social-icon"></i>
             </a>
 
@@ -468,17 +590,20 @@
 
     <script>
         function showTab(tabId) {
+            // Ignore unknown tabs (e.g. stray URL hashes)
+            const target = document.getElementById(tabId);
+            const button = document.querySelector(`button[onclick="showTab('${tabId}')"]`);
+            if (!target || !button) return;
+
             // Update buttons
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+            button.classList.add('active');
 
             // Update content
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
-            document.getElementById(tabId).classList.add('active');
+            target.classList.add('active');
 
             // Update URL
             history.pushState(null, '', `#${tabId}`);
@@ -497,29 +622,23 @@
             showTab(hash);
         });
 
-        // Additional functions from publications.html
-        function myFunction(name) {
-            var x = document.getElementById(name);
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
-
-        function redirect_blank(url) {
-            var a = document.createElement('a');
-            a.target = "_blank";
-            a.href = url;
-            a.click();
+        // Show / hide older news items
+        function toggleNews() {
+            const older = document.getElementById('older-news');
+            const btn = document.getElementById('news-toggle-btn');
+            const hidden = older.classList.toggle('hidden');
+            btn.textContent = hidden ? 'Show older news ▾' : 'Show fewer news ▴';
         }
 
         // Theme toggle functionality
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+
         function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
+            applyTheme(newTheme);
             localStorage.setItem('theme', newTheme);
         }
     </script>
