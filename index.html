@@ -124,15 +124,6 @@
             margin: 1em 0;
             font-size: 1.2em;
         }
-        nav ul {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            gap: 0.5em;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
         .tab-content {
             display: none;
             padding: 15px 0;
@@ -148,12 +139,6 @@
             font-size: 0.9em;
             color: var(--text-color);
             white-space: nowrap;
-        }
-        @media (min-width: 768px) {
-            .tab-button {
-                padding: 8px;
-                font-size: 1em;
-            }
         }
         .tab-button.active {
             border-bottom: 2px solid var(--link-color);
@@ -173,25 +158,10 @@
             gap: 1.5em;
             margin-bottom: 2em;
         }
-        @media (min-width: 768px) {
-            .profile-section {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            body {
-                padding: 2em;
-            }
-        }
         .profile-image {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-        }
-        @media (min-width: 768px) {
-            .profile-image {
-                width: 270px;
-                height: 270px;
-            }
         }
         footer {
             margin-top: 2em;
@@ -209,16 +179,8 @@
             font-size: 24px;
             color: var(--text-color);
         }
-        @media (min-width: 768px) {
-            .social-icon {
-                font-size: 30px;
-            }
-        }
         .news-item {
             margin: 10px 0;
-        }
-        .publication-item {
-            margin: 20px 0;
         }
         .theme-toggle {
             background: none;
@@ -228,12 +190,6 @@
             padding: 4px;
             color: var(--text-color);
             white-space: nowrap;
-        }
-        @media (min-width: 768px) {
-            .theme-toggle {
-                font-size: 1.2em;
-                padding: 5px;
-            }
         }
         nav {
             display: flex;
@@ -251,19 +207,53 @@
             line-height: 1.6;
         }
         @media (min-width: 768px) {
+            .tab-button {
+                padding: 8px;
+                font-size: 1em;
+            }
+            .profile-section {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            body {
+                padding: 2em;
+            }
+            .profile-image {
+                width: 270px;
+                height: 270px;
+            }
+            .social-icon {
+                font-size: 30px;
+            }
+            .theme-toggle {
+                font-size: 1.2em;
+                padding: 5px;
+            }
             .text {
                 font-size: 16px;
             }
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
     </style>
 </head>
 <body>
     <header>
+        <h1 class="sr-only">Adil Kabylda</h1>
         <nav>
             <button class="tab-button active" onclick="showTab('home')">Adil Kabylda</button>
             <button class="tab-button" onclick="showTab('resume')">Resume</button>
             <button class="tab-button" onclick="showTab('publications')">Publications</button>
-            <button class="theme-toggle" onclick="toggleTheme()" style="font-size: 1em;">🌓</button>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
         </nav>
     </header>
 
@@ -272,60 +262,63 @@
         <div class="profile-section">
             <img src="media/photo.jpeg" class="profile-image" alt="Adil Kabylda">
             <div class="text">
-                I am a postdoctoral researcher in the <a href="https://www.tcpunilu.com/" target="_blank">Theoretical Chemical Physics</a> group at the University of Luxembourg,
+                I am a postdoctoral researcher in the <a href="https://www.tcpunilu.com/" target="_blank" rel="noopener">Theoretical Chemical Physics</a> group at the University of Luxembourg,
                 where I recently obtained my Ph.D. under the supervision of Prof. Alexandre Tkatchenko. My research focuses on extending the applicability of 
                 machine learning force fields to larger (bio)molecules, with particular emphasis on accurately describing long-range interactions.
                 My ultimate goal is to enable atomistic modeling and understanding of increasingly complex (bio)molecular systems.
                 <br> <br>
                 
                 I received my B.Sc. and M.Sc. in chemistry from Moscow State University in 2021, specializing in physical and quantum chemistry. 
-				During my master's degree, I joined the <a href="https://qpd.chem.msu.ru/" target="_blank">Quantum Photodynamics Laboratory</a>, 
+				During my master's degree, I joined the <a href="https://qpd.chem.msu.ru/" target="_blank" rel="noopener">Quantum Photodynamics Laboratory</a>,
 				where I studied fundamental chemical processes of living organisms using state-of-the-art quantum chemistry methods. 
 				These included photo-induced isomerization of retinal, proton and electron transfer in green fluorescent protein. 
 				As an undergraduate, I pursued research in organic synthesis, developing efficient routes to naturally occurring alkaloids 
 				and designing asymmetric ion-pairing catalysts.
 				<br> <br>
                 I grew up in Pavlodar, Kazakhstan, and discovered my passion for the natural sciences through high school chemistry olympiads.
-                Besides research, my interests include counter-strike, chess, and russian rap music.
+                Besides research, my interests include Counter-Strike, chess, and Russian rap music.
             </div>
         </div>
         <h2>Latest News</h2>
         <div class="news-section">
-            <b>06/2026</b> - Honored to be selected as a delegate at the 56th <a href="https://achievement.org/summit/" target="_blank">International Achievement Summit</a> in Washington, DC! <br>
-            <b>06/2026</b> - I was featured in the Science category of <a href="https://forbes.kz/articles/forbes-kazakhstan-predstavlyaet-reyting-30-do-30-e11bed" target="_blank">Forbes Kazakhstan 30u30</a>! <br>
-            <b>05/2026</b> - <a href="https://arxiv.org/abs/2605.28960" target="_blank">How Atoms Interact Within Molecules</a> is out on <em>arXiv</em> <br>
-            <b>04/2026</b> - Received a <a href="https://research.google/programs-and-events/google-academic-research-awards/" target="_blank">2026 Google Academic Research Award</a> to support our MLFF efforts! <br>
+            <b>07/2026</b> - Our work on <a href="https://doi.org/10.1103/pv86-l9h7" target="_blank" rel="noopener">MBD-ML</a> is published in the first issue of <em>PRX Intelligence</em> <br>
+            <b>07/2026</b> - We organized the <a href="https://gpmlffworkshop.github.io/" target="_blank" rel="noopener">GP-MLFF 2026 workshop</a> on General-Purpose Machine-Learned Force Fields in Theory and Practice at the University of Luxembourg (13–15 July 2026) (<a href="https://www.youtube.com/playlist?list=PLH8nRg854m3U" target="_blank" rel="noopener">recordings</a>) <br>
+            <b>06/2026</b> - I gave an invited talk at <a href="https://pasc-conference.org/editions/pasc26/presentation/?id=msa184&sess=sess111" target="_blank" rel="noopener">PASC26</a> in Bern (Monday 29 June 2026, minisymposium) <br>
+            <b>06/2026</b> - Honored to be selected as a delegate at the 56th <a href="https://achievement.org/summit/" target="_blank" rel="noopener">International Achievement Summit</a> in Washington, DC! <br>
+            <b>06/2026</b> - I was featured in the Science category of <a href="https://forbes.kz/articles/forbes-kazakhstan-predstavlyaet-reyting-30-do-30-e11bed" target="_blank" rel="noopener">Forbes Kazakhstan 30u30</a>! <br>
+            <b>05/2026</b> - <a href="https://arxiv.org/abs/2605.28960" target="_blank" rel="noopener">How Atoms Interact Within Molecules</a> is out on <em>arXiv</em> <br>
+            <b>04/2026</b> - Received a <a href="https://research.google/programs-and-events/google-academic-research-awards/" target="_blank" rel="noopener">2026 Google Academic Research Award</a> to support our MLFF efforts! <br>
             <b>04/2026</b> - I gave an invited talk at ShanghaiTech University (SPST) <br>
-            <b>03/2026</b> - I gave an invited talk in the Physics Department at <a href="https://www.phys.tsinghua.edu.cn/info/1063/6724.htm" target="_blank">Tsinghua University</a> in Beijing <br>
-            <b>03/2026</b> - Our work on <a href="https://iopscience.iop.org/article/10.1088/3050-287X/ae5267" target="_blank">QCell</a> is published in <em>AI Sci.</em> <br>
-            <b>02/2026</b> - Our work on <a href="https://doi.org/10.48550/arXiv.2602.22086" target="_blank">MBD-ML</a> is out on <em>arXiv</em> <br>
+            <b>03/2026</b> - I gave an invited talk in the Physics Department at <a href="https://www.phys.tsinghua.edu.cn/info/1063/6724.htm" target="_blank" rel="noopener">Tsinghua University</a> in Beijing <br>
+            <b>03/2026</b> - Our work on <a href="https://doi.org/10.1088/3050-287X/ae5267" target="_blank" rel="noopener">QCell</a> is published in <em>AI Sci.</em> <br>
+            <b>02/2026</b> - Our work on <a href="https://arxiv.org/abs/2602.22086" target="_blank" rel="noopener">MBD-ML</a> is out on <em>arXiv</em> <br>
             <span id="older-news" class="news-item hidden">
             <b>01/2026</b> - I defended my thesis! <br>
-            <b>11/2025</b> - Our perspective on the state of MLFFs is published in the <a href="https://arxiv.org/abs/2511.20976" target="_blank"> AI4X Roadmap </a> <br> 
+            <b>11/2025</b> - Our perspective on the state of MLFFs is published in the <a href="https://doi.org/10.48550/arXiv.2511.20976" target="_blank" rel="noopener"> AI4X Roadmap </a> <br>
             <b>11/2025</b> - I gave an invited talk at KU Leuven's Quantum & Physical Chemistry Division Seminar <br> 
-			<b>10/2025</b> - Our new QCell dataset is out on <a href="https://arxiv.org/abs/2510.09939" target="_blank"> arXiv</a> and <a href="https://zenodo.org/records/17234182" target="_blank"> Zenodo</a>! <br> 
-            <b>09/2025</b> - I gave an invited talk at the <a href="https://ljc.group.cam.ac.uk/dft-2025" target="_blank">Lennard-Jones Centre Meeting</a> in Cambridge <br>
-            <b>08/2025</b> - Our work on <a href="https://doi.org/10.1021/jacs.5c09558" target="_blank"> SO3LR</a> MLFF for (bio)molecular simulations is published in <em>JACS</em> (<a href="https://pubs.acs.org/cms/10.1021/jacsat.2025.147.issue-37/asset/jacsat.2025.147.issue-37.xlargecover-5.jpg" target="_blank">&featured on the cover</a>)! <br>  
-		    <b>07/2025</b> - I gave a contributed talk at the <a href="https://ai4x.cc/" target="_blank">AI4X</a> in Singapore <br>
-			<b>06/2025</b> - I gave a contributed talk at the <a href="https://www.watoc2025.no/" target="_blank">WATOC</a> in Oslo <br>
-		   	<b>05/2025</b> - I gave an invited hands-on session at the <a href="https://www.cecam.org/workshop-details/machine-learning-in-physical-sciences-theory-and-applications-1449" target="_blank">ML in Physical Sciences</a> CECAM School in Lyon<br>
-   			<b>05/2025</b> - I gave an invited talk at the <a href="https://www.physik.fu-berlin.de/en/einrichtungen/ag/ag-clementi/index.html" target="_blank">Theoretical and Computational Biophysics</a> Group Seminar in Berlin <br>
-			<b>04/2025</b> - I gave an invited talk at the <a href="https://www.cecam.org/workshop-details/aichemist-1374" target="_blank">AIChemist</a> Flagship School in Lausanne <br>
-			<b>03/2025</b> - I am visiting <a href="https://web.ml.tu-berlin.de/" target="_blank">Klaus-Robert Müller's group</a> in Berlin for the next three months <br>
-			<b>02/2025</b> - Two parts (<a href="https://doi.org/10.1039/D4SC06529H" target="_blank">I</a>, <a href="https://doi.org/10.1039/D4SC06530A" target="_blank">II</a>) of the TEA Crash Testing MLFFs Challenge are published in <em>Chem. Sci.</em> <br>
-			<b>01/2025</b> - Our paper on <a href="https://doi.org/10.1021/acs.jctc.4c01424" target="_blank">Analyzing Atomic Interactions in Molecules as Learned by Neural Networks</a> is out in <em>JCTC</em> <br>
-			<b>12/2024</b> - Our work on <a href="https://doi.org/10.1002/adfm.202417891" target="_blank">Modeling of Mechanical Properties of Nanoporous Graphenes</a> is out in <em>Adv. Funct. Mater.</em> <br>
-			<b>11/2024</b> - I gave an invited talk at the <a href="https://www.epfl.ch/labs/cosmo/" target="_blank">COSMO Lab</a> Seminar in Lausanne <br>
-			<b>11/2024</b> - I gave an invited talk at the <a href="https://www.cecam.org/workshop-details/beyond-ground-state-simulations-navigating-challenges-in-excited-states-of-extended-molecules-and-materials-1285" target="_blank">CECAM Workshop</a> in Lausanne <br>
-			<b>10/2024</b> - I gave an invited talk at the <a href="https://ai4sciencetalks.github.io/projects/molecular_simulations_force_fields_adil/" target="_blank">AI4Science</a> online seminar <br>
-			<b>10/2024</b> - I gave an invited talk at the <a href="https://meetings.telluridescience.org/meetings/workshop-details?wid=1186" target="_blank">TSRC Workshop</a> in Telluride <br>
-			<b>10/2024</b> - Our work on <a href="https://doi.org/10.26434/chemrxiv-2024-bdfr0-v2" target="_blank"> Molecular Simulations with SO3LR </a> is out on <em>ChemRxiv</em> (<a href="https://github.com/general-molecular-simulations/so3lr" target="_blank">github</a>)! <br> 
-			<b>05/2024</b> - Great news! I won Wiley-VCH Best Poster Award at the <a href="https://ccsc2024.github.io/" target="_blank">Chemical Compounds Space Conference</a> in Heidelberg <br>
+			<b>10/2025</b> - Our new QCell dataset is out on <a href="https://arxiv.org/abs/2510.09939" target="_blank" rel="noopener"> arXiv</a> and <a href="https://zenodo.org/records/17234182" target="_blank" rel="noopener"> Zenodo</a>! <br>
+            <b>09/2025</b> - I gave an invited talk at the <a href="https://ljc.group.cam.ac.uk/dft-2025" target="_blank" rel="noopener">Lennard-Jones Centre Meeting</a> in Cambridge <br>
+            <b>08/2025</b> - Our work on <a href="https://doi.org/10.1021/jacs.5c09558" target="_blank" rel="noopener"> SO3LR</a> MLFF for (bio)molecular simulations is published in <em>JACS</em> (<a href="media/jacs_cover_2025.jpeg" target="_blank" rel="noopener">&featured on the cover</a>)! <br>
+		    <b>07/2025</b> - I gave a contributed talk at the <a href="https://ai4x.cc/" target="_blank" rel="noopener">AI4X</a> in Singapore <br>
+			<b>06/2025</b> - I gave a contributed talk at the <a href="https://www.watoc2025.no/" target="_blank" rel="noopener">WATOC</a> in Oslo <br>
+			<b>05/2025</b> - I gave an invited hands-on session at the <a href="https://www.cecam.org/workshop-details/machine-learning-in-physical-sciences-theory-and-applications-1449" target="_blank" rel="noopener">ML in Physical Sciences</a> CECAM School in Lyon<br>
+			<b>05/2025</b> - I gave an invited talk at the <a href="https://www.physik.fu-berlin.de/en/einrichtungen/ag/ag-clementi/index.html" target="_blank" rel="noopener">Theoretical and Computational Biophysics</a> Group Seminar in Berlin <br>
+			<b>04/2025</b> - I gave an invited talk at the <a href="https://www.cecam.org/workshop-details/aichemist-1374" target="_blank" rel="noopener">AIChemist</a> Flagship School in Lausanne <br>
+			<b>03/2025</b> - I am visiting <a href="https://web.ml.tu-berlin.de/" target="_blank" rel="noopener">Klaus-Robert Müller's group</a> in Berlin for the next three months <br>
+			<b>02/2025</b> - Two parts (<a href="https://doi.org/10.1039/D4SC06529H" target="_blank" rel="noopener">I</a>, <a href="https://doi.org/10.1039/D4SC06530A" target="_blank" rel="noopener">II</a>) of the TEA Crash Testing MLFFs Challenge are published in <em>Chem. Sci.</em> <br>
+			<b>01/2025</b> - Our paper on <a href="https://doi.org/10.1021/acs.jctc.4c01424" target="_blank" rel="noopener">Analyzing Atomic Interactions in Molecules as Learned by Neural Networks</a> is out in <em>JCTC</em> <br>
+			<b>12/2024</b> - Our work on <a href="https://doi.org/10.1002/adfm.202417891" target="_blank" rel="noopener">Modeling of Mechanical Properties of Nanoporous Graphenes</a> is out in <em>Adv. Funct. Mater.</em> <br>
+			<b>11/2024</b> - I gave an invited talk at the <a href="https://www.epfl.ch/labs/cosmo/" target="_blank" rel="noopener">COSMO Lab</a> Seminar in Lausanne <br>
+			<b>11/2024</b> - I gave an invited talk at the <a href="https://www.cecam.org/workshop-details/beyond-ground-state-simulations-navigating-challenges-in-excited-states-of-extended-molecules-and-materials-1285" target="_blank" rel="noopener">CECAM Workshop</a> in Lausanne <br>
+			<b>10/2024</b> - I gave an invited talk at the <a href="https://ai4sciencetalks.github.io/projects/molecular_simulations_force_fields_adil/" target="_blank" rel="noopener">AI4Science</a> online seminar <br>
+			<b>10/2024</b> - I gave an invited talk at the <a href="https://meetings.telluridescience.org/meetings/workshop-details?wid=1186" target="_blank" rel="noopener">TSRC Workshop</a> in Telluride <br>
+			<b>10/2024</b> - Our work on <a href="https://doi.org/10.26434/chemrxiv-2024-bdfr0-v2" target="_blank" rel="noopener"> Molecular Simulations with SO3LR </a> is out on <em>ChemRxiv</em> (<a href="https://github.com/general-molecular-simulations/so3lr" target="_blank" rel="noopener">github</a>)! <br>
+			<b>05/2024</b> - Great news! I won Wiley-VCH Best Poster Award at the <a href="https://ccsc2024.github.io/" target="_blank" rel="noopener">Chemical Compound Space Conference</a> in Heidelberg <br>
 			<b>05/2024</b> - I gave an invited talk at the uni.lu ML seminar <br>
 			<b>12/2023</b> - I gave a talk at the IPAM reunion in Lake Arrowhead. Feels great to be back in sunny LA <br>
  			<b>09/2023</b> - Just got through my second thesis committee meeting - the journey continues! <br>
-			<b>07/2023</b> - I will be traveling to Los Angeles in December for an <a href="http://www.ipam.ucla.edu/qmm2022" target="_blank">IPAM reunion conference</a> <br>
-			<b>06/2023</b> - Our paper on <a href="https://www.nature.com/articles/s41467-023-39214-w" target="_blank">Efficient interatomic descriptors for MLFFs of extended molecules</a> is now published in <em>Nat. Commun.</em> <br>
+			<b>07/2023</b> - I will be traveling to Los Angeles in December for an <a href="https://www.ipam.ucla.edu/qmm2022" target="_blank" rel="noopener">IPAM reunion conference</a> <br>
+			<b>06/2023</b> - Our paper on <a href="https://doi.org/10.1038/s41467-023-39214-w" target="_blank" rel="noopener">Efficient interatomic descriptors for MLFFs of extended molecules</a> is now published in <em>Nat. Commun.</em> <br>
 			<b>05/2023</b> - New website is up! <br>
             </span>
             <button class="news-toggle" id="news-toggle-btn" onclick="toggleNews()">Show older news ▾</button>
@@ -345,48 +338,49 @@
         
         <h2>Professional experience</h2>
         <ul>
-        <li>2021 &#8211; 2026, <a href="https://tcpunilu.com" target="_blank">Theoretical Chemical Physics Group</a>, University of Luxembourg</li>
-        <li>2025, <a href="https://web.ml.tu-berlin.de/" target="_blank">Machine Learning Group</a>, TU Berlin</li>
-        <li>2022, <a href="https://www.ipam.ucla.edu/qmm2022" target="_blank">Institute for Pure and Applied Mathematics</a>, UCLA, Los Angeles</li>
-        <li>2018 &#8211; 2021, <a href="http://qpd.chem.msu.ru/" target="_blank">Laboratory of Quantum Photodynamics</a>, Moscow State University</li>
-        <li>2018, <a href="https://tanchoonhong.wixsite.com/tchlab" target="_blank">TCH Laboratory</a>, Nanyang Technological University, Singapore</li>
+        <li>2021 &#8211; present, <a href="https://www.tcpunilu.com/" target="_blank" rel="noopener">Theoretical Chemical Physics Group</a>, University of Luxembourg</li>
+        <li>2025, <a href="https://web.ml.tu-berlin.de/" target="_blank" rel="noopener">Machine Learning Group</a>, TU Berlin</li>
+        <li>2022, <a href="https://www.ipam.ucla.edu/qmm2022" target="_blank" rel="noopener">Institute for Pure and Applied Mathematics</a>, UCLA, Los Angeles</li>
+        <li>2018 &#8211; 2021, <a href="https://qpd.chem.msu.ru/" target="_blank" rel="noopener">Laboratory of Quantum Photodynamics</a>, Moscow State University</li>
+        <li>2018, <a href="https://tanchoonhong.wixsite.com/tchlab" target="_blank" rel="noopener">TCH Laboratory</a>, Nanyang Technological University, Singapore</li>
         <li>2017, Laboratory of Laser Diagnostics, Moscow State University</li>
         <li>2015 &#8211; 2018, Laboratory of Organic Synthesis, Moscow State University</li>
         </ul>
         
         <h2>Awards</h2>
         <ul>
-        <li>2026, <a href="https://research.google/programs-and-events/google-academic-research-awards/" target="_blank">Google Academic Research Award</a></li>
-        <li>2026, Delegate at the 56th <a href="https://achievement.org/summit/" target="_blank">International Achievement Summit</a></li>
-        <li>2026, <a href="https://forbes.kz/articles/forbes-kazakhstan-predstavlyaet-reyting-30-do-30-e11bed" target="_blank">Forbes Kazakhstan 30 Under 30</a>, Science category</li>
-        <li>2024, Wiley-VCH Best Poster Award at the <a href="https://ccsc2024.github.io/" target="_blank">Chemical Compound Space Conference</a></li>
-        <li>2022, Lindau Fellow at the <a href="https://www.lindau-nobel.org/71st-lindau-nobel-laureate-meeting-2022/" target="_blank">71st Lindau Nobel Laureate Meeting</a> 
-            dedicated to Chemistry <a href="https://www.fnr.lu/research-with-impact-fnr-highlight/lindau-adil-kabylda/" target="_blank">(interview)</a></li>
-        <li>2021, <a href="https://www.fnr.lu/results-2021-afr-call/" target="_blank">FNR AFR Individual PhD Fellowship</a></li>
+        <li>2026, <a href="https://research.google/programs-and-events/google-academic-research-awards/" target="_blank" rel="noopener">Google Academic Research Award</a></li>
+        <li>2026, Delegate at the 56th <a href="https://achievement.org/summit/" target="_blank" rel="noopener">International Achievement Summit</a></li>
+        <li>2026, <a href="https://forbes.kz/articles/forbes-kazakhstan-predstavlyaet-reyting-30-do-30-e11bed" target="_blank" rel="noopener">Forbes Kazakhstan 30 Under 30</a>, Science category</li>
+        <li>2024, Wiley-VCH Best Poster Award at the <a href="https://ccsc2024.github.io/" target="_blank" rel="noopener">Chemical Compound Space Conference</a></li>
+        <li>2022, Lindau Fellow at the <a href="https://www.lindau-nobel.org/71st-lindau-nobel-laureate-meeting-2022/" target="_blank" rel="noopener">71st Lindau Nobel Laureate Meeting</a>
+            dedicated to Chemistry <a href="https://www.fnr.lu/research-with-impact-fnr-highlight/lindau-adil-kabylda/" target="_blank" rel="noopener">(interview)</a></li>
+        <li>2021, <a href="https://www.fnr.lu/results-2021-afr-call/" target="_blank" rel="noopener">FNR AFR Individual PhD Fellowship</a></li>
         <li>2021, Graduated Summa Cum Laude</li>
         <li>2021, Outstanding M.Sc. Thesis Award</li>
-        <li>2018 &#8211; 2021, Increased State Academic Scholarship</li>
         <li>2020, Yandex Silver medal</li>
+        <li>2018 &#8211; 2021, Increased State Academic Scholarship</li>
         <li>2018, Summer Research Fellowship, Nanyang Technological University</li>
-        <li>2016, <a href="https://www.msu.ru/news/nam-261-i-my-molody-.html" target="_blank">Student of the year</a>: awarded for outstanding achievements to five students across all MSU departments</li> 
+        <li>2016, <a href="https://www.msu.ru/news/nam-261-i-my-molody-.html" target="_blank" rel="noopener">Student of the year</a>: awarded for outstanding achievements to five students across all MSU departments</li>
         <li>2015, Valedictorian of Pavlodar Region, Kazakhstan</li>
-        <li>2015, <a href="http://www.icho-official.org/results/results.php?id=47&year=2015" target="_blank">Gold medal</a> at the 47th International Chemistry Olympiad</li>
-        <li>2014, <a href="http://www.icho-official.org/results/results.php?id=46&year=2014" target="_blank">Silver medal</a> at the 46th International Chemistry Olympiad</li>
+        <li>2015, <a href="https://www.icho-official.org/results/results.php?id=47&year=2015" target="_blank" rel="noopener">Gold medal</a> at the 47th International Chemistry Olympiad</li>
+        <li>2014, <a href="https://www.icho-official.org/results/results.php?id=46&year=2014" target="_blank" rel="noopener">Silver medal</a> at the 46th International Chemistry Olympiad</li>
         </ul> 
             
         <h2>Teaching and Service</h2>
         <ul>
+        <li>2026, Co-organizer of the <a href="https://gpmlffworkshop.github.io/" target="_blank" rel="noopener">GP-MLFF 2026 Workshop</a> in Luxembourg</li>
         <li>Since 2024, Reviewer for Chem. Sci., JACS, JACS Au, JCTC, JPC, JPC Letters, Nat. Commun., Nat. Mach. Intell., npj Comput. Mater.</li>
         <li>2024, Teaching assistant in Programming for Physics course, University of Luxembourg</li>
-        <li>2023, Co-organizer of <a href="https://estml.github.io/" target="_blank">ESTML 2023 Workshop</a> in Levi, Finland</li>
+        <li>2023, Co-organizer of <a href="https://estml.github.io/" target="_blank" rel="noopener">ESTML 2023 Workshop</a> in Levi, Finland</li>
         <li>2022, Teaching assistant in Quantum Mechanics course, University of Luxembourg</li>
-        <li>2020 &#8211; 2021, Co-supervised three undergraduate semester projects in Physical and Quantum Chemistry, MSU</li>
         <li>2021, Teaching assistant in Advanced Physical Chemistry course, MSU</li>
+        <li>2020 &#8211; 2021, Co-supervised three undergraduate semester projects in Physical and Quantum Chemistry, MSU</li>
         <li>2015 &#8211; 2021, Lecturer in Physical and Quantum Chemistry for Kazakhstan national/regional high-school chemistry team</li>
-        <li>2019, Member of <a href="https://2019.igem.org/Team:Moscow" target="_blank">Team Moscow</a> at iGEM 2019: 
+        <li>2019, Member of <a href="https://2019.igem.org/Team:Moscow" target="_blank" rel="noopener">Team Moscow</a> at iGEM 2019:
             supervised a student in the kinetic modeling of biomolecular interactions</li>
         <li>2015 &#8211; 2016, Jury at Regional Chemistry Olympiad, Pavlodar, Kazakhstan</li>
-        <li>2015, Article Author <a href="https://www.instagram.com/oyla.xyz/" target="_blank">OYLA</a> popular-scientific magazine, Almaty, Kazakhstan</li>
+        <li>2015, Article Author <a href="https://www.instagram.com/oyla.xyz/" target="_blank" rel="noopener">OYLA</a> popular-scientific magazine, Almaty, Kazakhstan</li>
         </ul>	
                 
         <h2>Miscellaneous</h2>
@@ -402,50 +396,58 @@
 
 		<h2>Publications</h2>
 		18 publications (incl. 8 as first author); &gt;670 citations on
-		<a href="https://scholar.google.com/citations?user=BIi43qMAAAAJ" target="_blank">Google Scholar</a>, h-index &ge;11.
+		<a href="https://scholar.google.com/citations?user=BIi43qMAAAAJ" target="_blank" rel="noopener">Google Scholar</a>, h-index &ge;11.
 
 		<h3>(Co-)First Author</h3>
 		<ol class="pub-list">
 
 			<li>
-				<em><a href="https://arxiv.org/abs/2605.28960" target="_blank">How Atoms Interact Within Molecules</a></em><br>
+				<em><a href="https://arxiv.org/abs/2605.28960" target="_blank" rel="noopener">How Atoms Interact Within Molecules</a></em><br>
 				<b>A. Kabylda</b>, M. Esders, M. Gori, S. Chmiela, K.-R. Müller, A. Tkatchenko <br>
 				<em>arXiv</em> <b>2026</b>, 2605.28960
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1088/3050-287X/ae5267" target="_blank">QCell: Comprehensive Quantum-Mechanical Dataset Spanning Diverse Biomolecular Fragments</a></em><br>
+				<em><a href="https://doi.org/10.1088/3050-287X/ae5267" target="_blank" rel="noopener">QCell: Comprehensive Quantum-Mechanical Dataset Spanning Diverse Biomolecular Fragments</a></em><br>
 				<b>A. Kabylda</b>, S. Suárez-Dou, N. Davoine, F.N. Brünig, A. Tkatchenko <br>
 				<em>AI Sci.</em> <b>2026</b>, 2, 025003
+			</li>
 
 			<li>
-				<em><a href="https://orbilu.uni.lu/handle/10993/67501" target="_blank">General-Purpose Machine Learning Force Fields for (Bio)Molecular Simulations</a></em><br>
+				<em><a href="https://orbilu.uni.lu/handle/10993/67501" target="_blank" rel="noopener">General-Purpose Machine Learning Force Fields for (Bio)Molecular Simulations</a></em><br>
 				<b>A. Kabylda</b> <br>
 				<em>University of Luxembourg</em> <b>2026</b>, PhD Thesis
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1021/jacs.5c09558" target="_blank">Molecular Simulations with a Pretrained Neural Network and Universal Pairwise Force Fields</a></em><br>
+				<em><a href="https://doi.org/10.1021/jacs.5c09558" target="_blank" rel="noopener">Molecular Simulations with a Pretrained Neural Network and Universal Pairwise Force Fields</a></em><br>
 				<b>A. Kabylda</b>, J.T. Frank, S. Suárez-Dou, A. Khabibrakhmanov, L. Medrano Sandonas, O.T. Unke, S. Chmiela, K.-R. Müller, A. Tkatchenko <br>
-				<em>J. Am. Chem. Soc.</em> <b>2025</b>, 147, 37, 33723 &mdash; <b><a href="https://pubs.acs.org/cms/10.1021/jacsat.2025.147.issue-37/asset/jacsat.2025.147.issue-37.xlargecover-5.jpg" target="_blank">Cover article</a></b>
+				<em>J. Am. Chem. Soc.</em> <b>2025</b>, 147, 37, 33723 &mdash; <b><a href="media/jacs_cover_2025.jpeg" target="_blank" rel="noopener">Cover article</a></b>
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1002/adfm.202417891" target="_blank">Mechanical Properties of Nanoporous Graphenes: Transferability of Graph Machine-Learned Force Fields Compared to Local and Reactive Potentials</a></em><br>
+				<em><a href="https://doi.org/10.1002/adfm.202417891" target="_blank" rel="noopener">Mechanical Properties of Nanoporous Graphenes: Transferability of Graph Machine-Learned Force Fields Compared to Local and Reactive Potentials</a></em><br>
 				<b>A. Kabylda</b>, B. Mortazavi, X. Zhuang, A. Tkatchenko <br>
 				<em>Adv. Funct. Mater.</em> <b>2025</b>, 35, 2417891
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1038/s41467-023-39214-w" target="_blank">Efficient Interatomic Descriptors for Accurate Machine Learning Force Fields of Extended Molecules</a></em><br>
+				<em><a href="https://doi.org/10.1038/s41467-023-39214-w" target="_blank" rel="noopener">Efficient Interatomic Descriptors for Accurate Machine Learning Force Fields of Extended Molecules</a></em><br>
 				<b>A. Kabylda</b>, V. Vassilev-Galindo, S. Chmiela, I. Poltavsky, A. Tkatchenko <br>
 				<em>Nat. Commun.</em> <b>2023</b>, 14, 3562
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1021/jacs.1c10752" target="_blank">Light Driven Ultrafast Bioinspired Molecular Motors: Steering and Accelerating Photoisomerization Dynamics of Retinal</a></em><br>
+				<em><a href="https://doi.org/10.1021/jacs.1c10752" target="_blank" rel="noopener">Light Driven Ultrafast Bioinspired Molecular Motors: Steering and Accelerating Photoisomerization Dynamics of Retinal</a></em><br>
 				E. Gruber, <b>A.M. Kabylda</b>, M.B. Nielsen, A.P. Rasmussen, R. Teiwes, P.A. Kusochek, A.V. Bochenkova, L.H. Andersen <br>
 				<em>J. Am. Chem. Soc.</em> <b>2022</b>, 144, 1, 69
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.3389/fmolb.2020.00176" target="_blank">A General Mechanism of Green-to-Red Photoconversions of GFP</a></em><br>
+				<em><a href="https://doi.org/10.3389/fmolb.2020.00176" target="_blank" rel="noopener">A General Mechanism of Green-to-Red Photoconversions of GFP</a></em><br>
 				D.A. Gorbachev, E.F. Petrusevich, <b>A.M. Kabylda</b>, E.G. Maksimov, K.A. Lukyanov, A.M. Bogdanov, M.S. Baranov, A.V. Bochenkova, A.S. Mishin <br>
 				<em>Front. Mol. Biosci.</em> <b>2020</b>, 7, 176
+			</li>
 
 		</ol>
 
@@ -453,54 +455,64 @@
 		<ol class="pub-list" start="9">
 
 			<li>
-				<em><a href="https://doi.org/10.48550/arXiv.2602.22086" target="_blank">MBD-ML: Many-Body Dispersion from Machine Learning for Molecules and Materials</a></em><br>
+				<em><a href="https://doi.org/10.1103/pv86-l9h7" target="_blank" rel="noopener">MBD-ML: Many-Body Dispersion from Machine Learning for Molecules and Materials</a></em><br>
 				E. Moerman, <b>A. Kabylda</b>, A. Khabibrakhmanov, A. Tkatchenko <br>
-				<em>arXiv</em> <b>2026</b>, 2602.22086
+				<em>PRX Intelligence</em> <b>2026</b>, 1, 013003
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.48550/arXiv.2511.20976" target="_blank">AI4X Roadmap: Artificial Intelligence for the Advancement of Scientific Pursuit and Its Future Directions</a></em><br>
+				<em><a href="https://doi.org/10.48550/arXiv.2511.20976" target="_blank" rel="noopener">AI4X Roadmap: Artificial Intelligence for the Advancement of Scientific Pursuit and Its Future Directions</a></em><br>
 				S.G. Dale, N. Kazeev, A.J.A. Price, &hellip;, <b>A. Kabylda</b>, I. Poltavsky, A. Tkatchenko, &hellip;, J.-H. Garcia <br>
 				<em>arXiv</em> <b>2025</b>, 2511.20976
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1021/acs.jctc.4c01424" target="_blank">Analyzing Atomic Interactions in Molecules as Learned by Neural Networks</a></em><br>
+				<em><a href="https://doi.org/10.1021/acs.jctc.4c01424" target="_blank" rel="noopener">Analyzing Atomic Interactions in Molecules as Learned by Neural Networks</a></em><br>
 				M. Esders, T. Schnake, J. Lederer, <b>A. Kabylda</b>, G. Montavon, A. Tkatchenko, K.-R. Müller <br>
 				<em>J. Chem. Theory Comput.</em> <b>2025</b>, 21, 2, 714
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1039/D4SC06530A" target="_blank">Crash Testing Machine Learning Force Fields for Molecules, Materials, and Interfaces: Molecular Dynamics in the TEA Challenge 2023</a></em><br>
+				<em><a href="https://doi.org/10.1039/D4SC06530A" target="_blank" rel="noopener">Crash Testing Machine Learning Force Fields for Molecules, Materials, and Interfaces: Molecular Dynamics in the TEA Challenge 2023</a></em><br>
 				I. Poltavsky, M. Puleva, A. Charkin-Gorbulin, G. Fonseca, I. Batatia, N.J. Browning, S. Chmiela, M. Cui, J.T. Frank, S. Heinen, B. Huang, S. Käser, <b>A. Kabylda</b>, D. Khan, C. Müller, A.J.A. Price, K. Riedmiller, K. Töpfer, T.W. Ko, M. Meuwly, M. Rupp, G. Csányi, O.A. von Lilienfeld, J.T. Margraf, K.-R. Müller, A. Tkatchenko <br>
 				<em>Chem. Sci.</em> <b>2025</b>, 16, 3738
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1039/D4SC06529H" target="_blank">Crash Testing Machine Learning Force Fields for Molecules, Materials, and Interfaces: Model Analysis in the TEA Challenge 2023</a></em><br>
+				<em><a href="https://doi.org/10.1039/D4SC06529H" target="_blank" rel="noopener">Crash Testing Machine Learning Force Fields for Molecules, Materials, and Interfaces: Model Analysis in the TEA Challenge 2023</a></em><br>
 				I. Poltavsky, M. Puleva, A. Charkin-Gorbulin, G. Fonseca, I. Batatia, N.J. Browning, S. Chmiela, M. Cui, J.T. Frank, S. Heinen, B. Huang, S. Käser, <b>A. Kabylda</b>, D. Khan, C. Müller, A.J.A. Price, K. Riedmiller, K. Töpfer, T.W. Ko, M. Meuwly, M. Rupp, G. Csányi, O.A. von Lilienfeld, J.T. Margraf, K.-R. Müller, A. Tkatchenko <br>
 				<em>Chem. Sci.</em> <b>2025</b>, 16, 3720
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1126/sciadv.adf0873" target="_blank">Accurate Global Machine Learning Force Fields for Molecules with Hundreds of Atoms</a></em><br>
+				<em><a href="https://doi.org/10.1126/sciadv.adf0873" target="_blank" rel="noopener">Accurate Global Machine Learning Force Fields for Molecules with Hundreds of Atoms</a></em><br>
 				S. Chmiela, V. Vassilev-Galindo, O.T. Unke, <b>A. Kabylda</b>, H.E. Sauceda, A. Tkatchenko, K.-R. Müller <br>
 				<em>Sci. Adv.</em> <b>2023</b>, 9, eadf0873
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1002/cphc.202100068" target="_blank">Controlling Light-Induced Proton Transfer from the GFP Chromophore</a></em><br>
+				<em><a href="https://doi.org/10.1002/cphc.202100068" target="_blank" rel="noopener">Controlling Light-Induced Proton Transfer from the GFP Chromophore</a></em><br>
 				J. Langeland, N.W. Persen, E. Gruber, H.V. Kiefer, <b>A.M. Kabylda</b>, A.V. Bochenkova, L.H. Andersen <br>
-				<em>ChemPhysChem</em> <b>2021</b>, 22, 9, 833 &mdash; <b><a href="https://doi.org/10.1002/cphc.202100282" target="_blank">Cover article</a></b>
+				<em>ChemPhysChem</em> <b>2021</b>, 22, 9, 833 &mdash; <b><a href="https://doi.org/10.1002/cphc.202100282" target="_blank" rel="noopener">Cover article</a></b>
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1021/acscatal.9b04862" target="_blank">Bisguanidinium-Catalyzed Epoxidation of Allylic and Homoallylic Amines under Phase Transfer Conditions</a></em><br>
+				<em><a href="https://doi.org/10.1021/acscatal.9b04862" target="_blank" rel="noopener">Bisguanidinium-Catalyzed Epoxidation of Allylic and Homoallylic Amines under Phase Transfer Conditions</a></em><br>
 				K.F. Chin, X. Ye, Y. Li, R. Lee, <b>A.M. Kabylda</b>, D. Leow, X. Zhang, E.C.X. Ang, C.-H. Tan <br>
-				<em>ACS Catal.</em> <b>2020</b>, 10, 4, 2684 &mdash; <b><a href="https://pubs.acs.org/toc/accacs/10/4" target="_blank">Cover article</a></b>
+				<em>ACS Catal.</em> <b>2020</b>, 10, 4, 2684 &mdash; <b><a href="https://pubs.acs.org/toc/accacs/10/4" target="_blank" rel="noopener">Cover article</a></b>
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1002/ejoc.201800992" target="_blank">Efficient Synthesis of the Peptide Fragment of the Natural Depsipeptides Jaspamide and Chondramide</a></em><br>
+				<em><a href="https://doi.org/10.1002/ejoc.201800992" target="_blank" rel="noopener">Efficient Synthesis of the Peptide Fragment of the Natural Depsipeptides Jaspamide and Chondramide</a></em><br>
 				D.P. Zarezin, O.I. Shmatova, <b>A.M. Kabylda</b>, V.G. Nenajdenko <br>
 				<em>Eur. J. Org. Chem.</em> <b>2018</b>, 34, 4716
+			</li>
 
 			<li>
-				<em><a href="https://doi.org/10.1016/j.tet.2018.06.045" target="_blank">Efficient Synthesis of Tetrazole Derivatives of Cytisine Using the Azido-Ugi Reaction</a></em><br>
+				<em><a href="https://doi.org/10.1016/j.tet.2018.06.045" target="_blank" rel="noopener">Efficient Synthesis of Tetrazole Derivatives of Cytisine Using the Azido-Ugi Reaction</a></em><br>
 				D.P. Zarezin, <b>A.M. Kabylda</b>, V.I. Vinogradova, P.V. Dorovatovskii, V.N. Khrustalev, V.G. Nenajdenko <br>
 				<em>Tetrahedron</em> <b>2018</b>, 74, 32, 4315
+			</li>
 
 		</ol>
 
@@ -568,31 +580,33 @@
 
     <footer>
         <ul>
-            <a href="https://scholar.google.com/citations?user=BIi43qMAAAAJ" target="_blank" aria-label="Google Scholar">
+            <li><a href="https://scholar.google.com/citations?user=BIi43qMAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
                 <i class="fa-brands fa-google-scholar social-icon"></i>
-            </a>
-            <a href="https://orcid.org/0000-0002-8620-6135" target="_blank" aria-label="ORCID">
+            </a></li>
+            <li><a href="https://orcid.org/0000-0002-8620-6135" target="_blank" rel="noopener" aria-label="ORCID">
                 <i class="fa-brands fa-orcid social-icon"></i>
-            </a>
-            <a href="https://x.com/kabylda_" target="_blank" aria-label="X (Twitter)">
+            </a></li>
+            <li><a href="https://x.com/kabylda_" target="_blank" rel="noopener" aria-label="X (Twitter)">
                 <i class="fa-brands fa-x-twitter social-icon"></i>
-            </a>
-            <a href="https://bsky.app/profile/kabylda.bsky.social" target="_blank" aria-label="Bluesky">
+            </a></li>
+            <li><a href="https://bsky.app/profile/kabylda.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky">
                 <i class="fa-brands fa-bluesky social-icon"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/kabylda/" target="_blank" aria-label="LinkedIn">
+            </a></li>
+            <li><a href="https://www.linkedin.com/in/kabylda/" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in social-icon"></i>
-            </a>
+            </a></li>
 
         </ul>
     </footer>
 
     <script>
-        function showTab(tabId) {
+        function showTab(tabId, updateHistory = true) {
             // Ignore unknown tabs (e.g. stray URL hashes)
             const target = document.getElementById(tabId);
             const button = document.querySelector(`button[onclick="showTab('${tabId}')"]`);
             if (!target || !button) return;
+
+            const alreadyActive = target.classList.contains('active');
 
             // Update buttons
             document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
@@ -605,20 +619,22 @@
             target.classList.add('active');
 
             // Update URL
-            history.pushState(null, '', `#${tabId}`);
+            if (updateHistory && !alreadyActive) {
+                history.pushState(null, '', `#${tabId}`);
+            }
         }
 
         // Handle initial load and back/forward navigation
         window.addEventListener('load', () => {
             const hash = window.location.hash.slice(1);
             if (hash) {
-                showTab(hash);
+                showTab(hash, false);
             }
         });
 
         window.addEventListener('popstate', () => {
             const hash = window.location.hash.slice(1) || 'home';
-            showTab(hash);
+            showTab(hash, false);
         });
 
         // Show / hide older news items
